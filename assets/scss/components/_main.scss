@@ -1,0 +1,324 @@
+.section {
+  &--light {
+    background-color: $light-text-accent-color;
+  }
+
+  &--dark {
+    @include bg-img("Zach2.jpg");
+    max-width: 100%;
+    min-height: rem(880);
+    color: $light-text-accent-color;
+    margin-top: rem(135);
+  }
+
+  &__heading {
+    &--dark-accent {
+      color: $dark-heading-color1;
+      padding-top: rem(54);
+
+      @include breakpoint("medium") {
+        padding-top: rem(108);
+      }
+    }
+
+    &--dark-main {
+      color: $dark-heading-color;
+      padding-top: rem(47);
+      @include breakpoint("medium") {
+        padding-top: rem(95);
+      }
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      width: rem(60);
+      height: rem(52);
+      margin: 0 auto;
+    }
+    &--dark {
+      margin-bottom: rem(41);
+
+      @include breakpoint("medium") {
+        margin-bottom: rem(81);
+      }
+      &::before {
+        @include bg-img("Micro.png");
+        margin-bottom: rem(14);
+
+        @include breakpoint("medium") {
+          margin-bottom: rem(27);
+        }
+      }
+    }
+    &--light {
+      padding-top: rem(164);
+      text-align: left;
+      color: $light-text-accent-color;
+      &::before {
+        @include bg-img("Micro-1.png");
+        margin-bottom: rem(14);
+        margin-left: 18%;
+        @include breakpoint("medium") {
+          margin-bottom: rem(37);
+        }
+      }
+    }
+
+    &--contact {
+      margin-bottom: rem(41);
+      @include breakpoint("medium") {
+        margin-bottom: rem(67);
+      }
+      &::before {
+        margin-bottom: rem(14);
+        @include breakpoint("medium") {
+          margin-bottom: rem(37);
+        }
+      }
+    }
+  }
+  &__image {
+    width: 70%;
+
+    @include breakpoint("small") {
+      width: 50%;
+    }
+
+    @include breakpoint("medium") {
+      width: 42%;
+    }
+
+    margin: 0 auto;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-width: 200px;
+    }
+
+    @include breakpoint("medium") {
+      &::before {
+        content: "";
+        display: block;
+        margin-left: -20%;
+        width: rem(133);
+        height: rem(55);
+        @include bg-img("Shape.png");
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        margin-left: 93%;
+        width: rem(133);
+        height: rem(55);
+        @include bg-img("Shape.png");
+      }
+    }
+  }
+
+  &__description {
+    font-size: rem(15);
+    text-align: center;
+    line-height: 1.8;
+
+    @include breakpoint("medium") {
+      font-size: rem(17);
+    }
+
+    &--main {
+      color: $dark-text-main-color;
+      padding-bottom: rem(41);
+
+      @include breakpoint(medium) {
+        padding-bottom: rem(83);
+      }
+    }
+
+    &--dark-accent {
+      padding-top: rem(74);
+      padding-bottom: rem(29);
+      color: $dark-text-accent-color;
+    }
+
+    &--light {
+      padding-bottom: rem(115);
+      text-align: left;
+      max-width: 56ch;
+      padding-top: rem(44);
+    }
+  }
+
+  &__buttons {
+    text-transform: uppercase;
+    color: $light-text-accent-color;
+    padding: rem(15) rem(30);
+    font-size: rem(15);
+    width: rem(150);
+
+    text-align: center;
+    white-space: nowrap;
+    border-radius: rem(50);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    @include breakpoint("medium") {
+      padding: rem(30) rem(60);
+      font-size: rem(17);
+      width: rem(215);
+    }
+
+    &--link {
+      display: block;
+      text-decoration: none;
+    }
+
+    &--accent {
+      background-color: $accent-bg-color;
+      &:hover {
+        background-color: lighten($accent-bg-color, 10%);
+      }
+    }
+
+    &--main {
+      background-color: $dark-color;
+      margin: auto;
+      &:hover {
+        background-color: lighten($dark-color, 10%);
+      }
+    }
+  }
+
+  &__contact-form {
+    width: 100%;
+    margin-bottom: rem(43);
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("medium") {
+      width: 80%;
+      margin-bottom: rem(85);
+    }
+    @include breakpoint("large") {
+      width: 66.66%;
+    }
+
+    fieldset {
+      width: 100%;
+      padding: rem(41) 0;
+      border-color: $dark-color;
+      margin-bottom: rem(42);
+      @include breakpoint("medium") {
+        margin-bottom: rem(60);
+        padding: rem(82) 0;
+      }
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 89%;
+      margin: 0 auto rem(26) auto;
+      padding: rem(11) rem(9);
+      border: rem(2) solid $dark-color;
+      font-size: rem(14);
+
+      @include breakpoint("medium") {
+        font-size: 1rem;
+        padding: rem(22) rem(18);
+      }
+
+      &::placeholder {
+        color: $placeholder-form-color;
+        font-weight: 400;
+      }
+    }
+
+    textarea {
+      font-size: 1rem;
+      &::placeholder {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      border-color: transparent;
+      margin: 0 auto;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: rem(44);
+
+    @include breakpoint("medium") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 rem(65);
+      align-items: center;
+      margin-bottom: rem(87);
+    }
+
+    @include breakpoint("large") {
+      flex-direction: row;
+      padding: 0 rem(65);
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  width: 85%;
+  margin-top: rem(30);
+  height: rem(315);
+  border-radius: 5%;
+  justify-content: center;
+  align-items: end;
+  text-decoration: none;
+  &:nth-child(1) {
+    margin-top: 0;
+  }
+
+  @include breakpoint("small") {
+    width: 60%;
+  }
+
+  @include breakpoint("medium") {
+    margin-top: 0;
+    width: 45%;
+    margin-right: rem(15);
+    margin-bottom: rem(20);
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+  }
+  @include breakpoint("large") {
+    width: calc(33.33% - rem(29));
+    margin-bottom: 0;
+  }
+
+  &--online {
+    @include bg-img("Girl.jpg");
+  }
+
+  &--offline {
+    @include bg-img("Microphone.jpg");
+  }
+
+  &--singing {
+    @include bg-img("Musician.jpg");
+  }
+
+  &__title {
+    padding-bottom: rem(64);
+    font-weight: 700;
+    color: $light-text-accent-color;
+  }
+}

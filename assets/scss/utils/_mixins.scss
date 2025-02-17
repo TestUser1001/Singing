@@ -1,0 +1,54 @@
+@use "sass:map";
+
+@mixin add-font(
+  $font-url,
+  $font-name,
+  $font-weight: normal,
+  $font-style: normal
+) {
+  font-family: $font-name;
+  src: url("#{$font-folder}#{$font-url}.eot");
+  src: url("#{$font-folder}#{$font-url}.eot?#iefix") format("embedded-opentype"),
+    url("#{$font-folder}#{$font-url}.woff") format("woff"),
+    url("#{$font-folder}#{$font-url}.ttf") format("truetype"),
+    url("#{$font-folder}#{$font-url}.svg##{$font-name}") format("svg");
+  font-weight: $font-weight;
+  font-style: normal;
+}
+
+@mixin bg-img($img, $pos: center center, $att: scroll) {
+  background-image: url("#{$img-folder}#{$img}");
+  background-position: $pos;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: $att;
+}
+
+$breakpoints-up: (
+  "small": "576px",
+  "medium": "768px",
+  "large": "992px",
+  "xlarge": "1200px",
+  "xxlarge": "1400px",
+);
+
+//639px, 1149px, 1399px
+$breakpoints-down: (
+  "xsmall": "575px",
+  "small": "767px",
+  "medium": "991px",
+  "large": "1199px",
+  "xlarge": "1399px",
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map.get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map.get($breakpoints-down, $size)) {
+    @content;
+  }
+}

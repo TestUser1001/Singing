@@ -1,0 +1,231 @@
+.header {
+  padding: rem(33) rem(50) rem(35) rem(58);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+
+  @include breakpoint("medium") {
+    padding: rem(53) rem(50) rem(71) rem(58);
+  }
+
+  &__nav-burger {
+    display: flex;
+    align-items: center;
+  }
+
+  &__burger {
+    width: rem(32);
+    height: rem(40);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+
+    & span {
+      display: block;
+
+      height: rem(1);
+      width: 100%;
+      background: $light-text-color;
+      border-radius: rem(5);
+      opacity: 1;
+      left: 0;
+      margin-bottom: rem(5);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &.active {
+      cursor: pointer;
+      & span:nth-of-type(1) {
+        transform: rotate(45deg);
+        margin-bottom: 0;
+      }
+      & span:nth-of-type(2) {
+        transform: translateX(-20px);
+        opacity: 0;
+        display: none;
+      }
+      & span:nth-of-type(3) {
+        transform-origin: center;
+        transform: rotate(-45deg);
+        margin-bottom: 0;
+      }
+    }
+    @include breakpoint("medium") {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($dark-color, 0.8);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+
+    @include breakpoint("medium") {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: auto;
+      background: none;
+      transform: translateX(0);
+    }
+
+    &.visible {
+      display: flex;
+      transform: translateX(0);
+
+      .header__list {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__logo {
+    align-self: flex-start;
+    a {
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding-top: rem(100); //
+    gap: rem(20); //
+    flex-direction: column;
+    text-align: center;
+    opacity: 0; //
+    transition: opacity 0.3s ease-in-out;
+    font-size: rem(18);
+    @include breakpoint("medium") {
+      opacity: 1;
+      flex-direction: row;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      list-style-type: none;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: block;
+    margin-top: rem(15);
+    border-bottom: rem(0.1) solid rgba($light-text-color, 0.3);
+
+    @include breakpoint("medium") {
+      display: inline-block;
+      padding-right: rem(40);
+      margin-top: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $light-text-color;
+    font-size: rem(17);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+    @include breakpoint("medium") {
+      text-transform: capitalize;
+      &::after {
+        position: absolute;
+        content: ".";
+        padding-left: rem(10);
+        top: rem(-4);
+      }
+    }
+
+    &:hover {
+      color: darken($light-text-color, 18%);
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  @include breakpoint-down("small") {
+    display: none;
+  }
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: rem(9);
+}
+
+.swiper-pagination-bullet {
+  background-color: $white-color;
+  width: rem(22);
+  height: rem(22);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  outline: rem(6) solid $bullet-borderradius-color;
+}
+.swiper-slide {
+  opacity: 0 !important;
+}
+.swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  right: var(--swiper-pagination-right, 48px);
+}
+
+.swiper-counter {
+  display: none;
+  @include breakpoint("medium") {
+    padding: 0 rem(10);
+    position: absolute;
+    top: 55%;
+    transform: translateY(-55%);
+    left: rem(77);
+    display: flex;
+    flex-direction: column;
+    color: $light-text-color;
+    gap: rem(17);
+    align-items: center;
+    font-weight: 700;
+    font-size: rem(17);
+  }
+}
+
+.swiper-line {
+  background-color: $light-text-color;
+  height: rem(366);
+  width: rem(2);
+}

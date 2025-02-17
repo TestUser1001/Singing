@@ -1,0 +1,217 @@
+.footer {
+  background: $dark-color;
+  color: $white-color;
+
+  &__bottom {
+    padding: rem(36) 0 rem(32);
+    text-align: center;
+    position: relative;
+    font-size: rem(15);
+
+    border-top: rem(1) solid $line-color;
+
+    @include breakpoint("medium") {
+      font-size: 1rem;
+    }
+  }
+  .footerfollowSection {
+    padding-top: rem(80);
+    padding-bottom: rem(33);
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    gap: rem(45);
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include breakpoint("medium") {
+      padding-top: rem(160);
+      padding-bottom: rem(67);
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__socialBtn {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: rem(20);
+    }
+    &__followOn {
+      color: $light-text-accent-color;
+      text-transform: uppercase;
+      font-size: rem(24);
+      line-height: 0.8;
+      white-space: nowrap;
+
+      @include breakpoint("large") {
+        font-size: rem(28);
+      }
+      @include breakpoint("xlarge") {
+        font-size: rem(32);
+      }
+    }
+    &__buttons {
+      display: flex;
+      gap: rem(7);
+      a {
+        transition: all 0.5s ease-in-out;
+      }
+
+      a:hover {
+        opacity: 0.65;
+      }
+    }
+
+    &__btn {
+      display: block;
+      width: rem(25);
+      height: rem(25);
+      @include breakpoint("large") {
+        width: rem(30);
+        height: rem(30);
+      }
+      @include breakpoint("xlarge") {
+        width: rem(39);
+        height: rem(39);
+      }
+    }
+
+    &__btn--facebook {
+      background: url("#{$img-folder}facebook.png") no-repeat;
+      background-size: cover;
+    }
+
+    &__btn--twitter {
+      background: url("#{$img-folder}twitter.png") no-repeat;
+      background-size: cover;
+    }
+
+    &__btn--linkedin {
+      background: url("#{$img-folder}linkedin.png") no-repeat;
+      background-size: cover;
+    }
+
+    &__btn--instagram {
+      background: url("#{$img-folder}instagram.png") no-repeat;
+      background-size: cover;
+    }
+
+    &__subscribe {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+
+      @include breakpoint("small") {
+        width: 90%;
+      }
+
+      @include breakpoint("medium") {
+        width: calc(55% - rem(10));
+      }
+
+      @include breakpoint("large") {
+        width: calc(60% - rem(25));
+      }
+
+      @include breakpoint("xlarge") {
+        width: calc(61% - rem(15));
+      }
+    }
+
+    &__subscribe-form {
+      width: 100%;
+      display: flex;
+      gap: rem(15);
+      align-items: center;
+      flex-direction: column;
+
+      font-size: rem(17);
+      border: 1px solid transparent;
+
+      border-radius: rem(50);
+
+      line-height: 1;
+      position: relative;
+
+      @include breakpoint("small") {
+        height: max-content;
+        overflow: hidden;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    &__email {
+      outline: none;
+      padding: rem(18);
+      width: 100%;
+      background-color: $light-text-accent-color;
+      border: none;
+      position: relative;
+      border-radius: rem(10);
+      font-size: rem(15);
+
+      @include breakpoint("small") {
+        border-radius: 0;
+      }
+
+      @include breakpoint("large") {
+        font-size: rem(17);
+      }
+
+      @include breakpoint("xlarge") {
+        padding: rem(24) rem(21) rem(21);
+      }
+      &::placeholder {
+        color: $placeholder-footer-color;
+        font-size: rem(15);
+        @include breakpoint("xlarge") {
+          font-size: rem(17);
+        }
+      }
+    }
+
+    &__subscribeBtn {
+      padding: rem(19);
+      font-size: rem(15);
+      position: relative;
+      display: block;
+      border-radius: rem(10);
+
+      text-align: center;
+      width: 75%;
+      background-color: $accent-bg-color;
+      color: $light-text-accent-color;
+      text-transform: uppercase;
+      white-space: nowrap;
+      line-height: 1.5;
+      outline: none;
+
+      border: none;
+
+      transition: all 0.4s ease-in-out;
+
+      @include breakpoint("small") {
+        position: absolute;
+        top: rem(-4);
+        right: 0;
+        width: 40%;
+        border-radius: 0;
+      }
+
+      @include breakpoint("xlarge") {
+        width: 33.33%;
+        padding: rem(24);
+        font-size: rem(17);
+      }
+
+      &:hover {
+        background-color: desaturate($accent-bg-color, 30%);
+        cursor: pointer;
+      }
+    }
+  }
+}

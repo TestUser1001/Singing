@@ -1,0 +1,13 @@
+.container {
+  padding: 0 rem(15);
+  max-width: rem(1170);
+  margin: 0 auto;
+
+  @include breakpoint("medium") {
+    padding: 0 rem(30);
+  }
+
+  @include breakpoint("large") {
+    padding: 0 rem(50);
+  }
+}
