@@ -80,6 +80,8 @@
     &.visible {
       display: flex;
       transform: translateX(0);
+      overflow-x: hidden;
+      overflow-y: scroll;
 
       .header__list {
         opacity: 1;

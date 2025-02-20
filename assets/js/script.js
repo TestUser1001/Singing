@@ -30,7 +30,7 @@ const ul = document.getElementById("list");
 hamburger.addEventListener("click", () => {
   ul.classList.toggle("show");
   nav.classList.toggle("visible");
-  hamburger.classList.toggle("active"); // You can add a rotating effect here, if desired
+  hamburger.classList.toggle("active");
 });
 
 window.addEventListener("resize", (event) => {
