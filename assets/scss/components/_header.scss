@@ -213,6 +213,7 @@
   @include breakpoint("medium") {
     padding: 0 rem(10);
     position: absolute;
+    height: 45%;
     top: 55%;
     transform: translateY(-55%);
     left: rem(77);
