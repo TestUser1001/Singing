@@ -5,7 +5,7 @@ const swiper = new Swiper(".mySwiper", {
   loop: false,
   autoplay: {
     delay: 2500,
-    disableOnInteraction: true,
+    disableOnInteraction: false,
   },
   slidesPerView: 1,
   effect: "fade",

@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-size: 100%;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   position: relative;
