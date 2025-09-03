@@ -59,9 +59,6 @@
 
   &__nav {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100vh;
     background-color: rgba($dark-color, 0.8);
@@ -79,9 +76,12 @@
 
     &.visible {
       display: flex;
+      top: 0;
+      left: 0;
       transform: translateX(0);
       overflow-x: hidden;
       overflow-y: scroll;
+      position: fixed;
 
       .header__list {
         opacity: 1;
@@ -236,4 +236,8 @@
   background-color: $light-text-color;
   height: rem(366);
   width: rem(2);
+}
+
+.swiper-vertical {
+  touch-action: auto;
 }
